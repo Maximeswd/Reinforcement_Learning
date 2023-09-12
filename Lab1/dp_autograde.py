@@ -19,6 +19,7 @@ def policy_eval_v(policy, env, discount_factor=1.0, theta=0.00001):
     """
     # Start with an all 0 value function
     V = np.zeros(env.nS)
+    # Outer loop loops while accuracy of estimation (i.e., function change) exceeds threshold theta for all states
     # YOUR CODE HERE
     while True:
         delta = 0  # Initialize the change in value function
@@ -65,6 +66,7 @@ def policy_eval_v(policy, env, discount_factor=1.0, theta=0.00001):
     while True:
         delta = 0  # Initialize the change in value function
 
+        # Loop over all states
         for s in range(env.nS):
             v_s = 0  # Initialize the new value of state s
 
